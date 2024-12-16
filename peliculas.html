@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas Disponibles</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Películas Disponibles</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="series.html">Series</a></li>
+                <li><a href="peliculas.html">Películas</a></li>
+                <li><a href="anime.html">Anime</a></li>
+                <li><a href="#">Mi Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="movies">
+            <h2>Lista de Películas</h2>
+            <div class="movie" onclick="playMovie('Los descendientes- Corazón rebelde.mp4')">
+                <img src="img/descendiente.png" alt="Película 1">
+                <h3>Película 1</h3>
+            </div>
+            <div class="movie" onclick="playMovie('Los descendientes.mp4')">
+                <img src="img/R (1).jpg" alt="Película 2">
+                <h3>Película 2</h3>
+            </div>
+            <div class="movie" onclick="playMovie('Los descendientes 2.mp4')">
+                <img src="img/OIP.jpg" alt="Los descendientes 2">
+                <h3>Película 3</h3>
+            </div>
+            <!-- Agrega más películas aquí -->
+        </section>
+
+        <!-- Elemento de video oculto -->
+        <div id="videoModal" class="modal" onclick="closeVideo()">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mi Página de Streaming</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

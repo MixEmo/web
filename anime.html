@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Disponibles</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .episode-list {
+            display: none; /* Ocultar la lista de episodios por defecto */
+            margin-top: 10px;
+        }
+        .episode-item {
+            cursor: pointer;
+            color: #00f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Anime Disponibles</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="series.html">Series</a></li>
+                <li><a href="peliculas.html">Películas</a></li>
+                <li><a href="anime.html">Anime</a></li> <!-- Enlace a la nueva página de anime -->
+                <li><a href="#">Mi Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="anime">
+            <h2>Lista de Anime</h2>
+            <div class="anime-item" onclick="toggleEpisodes('narutoEpisodes')">
+                <img src="naruto.jpg" alt="Naruto">
+                <h3>Naruto</h3>
+            </div>
+            <div id="narutoEpisodes" class="episode-list">
+                <div class="episode-item" onclick="playEpisode('naruto_episode1.mp4')">Episodio 1: El Comienzo</div>
+                <div class="episode-item" onclick="playEpisode('naruto_episode2.mp4')">Episodio 2: La Prueba</div>
+                <div class="episode-item" onclick="playEpisode('naruto_episode3.mp4')">Episodio 3: El Primer Misión</div>
+                <!-- Agrega más episodios aquí -->
+            </div>
+
+            <div class="anime-item" onclick="toggleEpisodes('onePieceEpisodes')">
+                <img src="onepiece.jpg" alt="One Piece">
+                <h3>One Piece</h3>
+            </div>
+            <div id="onePieceEpisodes" class="episode-list">
+                <div class="episode-item" onclick="playEpisode('onepiece_episode1.mp4')">Episodio 1: El Inicio de la Aventura</div>
+                <div class="episode-item" onclick="playEpisode('onepiece_episode2.mp4')">Episodio 2: El Primer Compañero</div>
+                <div class="episode-item" onclick="playEpisode('onepiece_episode3.mp4')">Episodio 3: La Isla de los Peces</div>
+                <!-- Agrega más episodios aquí -->
+            </div>
+            <!-- Agrega más animes aquí -->
+        </section>
+
+        <!-- Elemento de video oculto -->
+        <div id="videoModal" class="modal" onclick="closeVideo()">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mi Página de Streaming</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleEpisodes(episodeId) {
+            const episodeList = document.getElementById(episodeId);
+            if (episodeList.style.display === "none") {
+                episodeList.style.display = "block"; // Mostrar la lista de episodios
+            } else {
+                episodeList.style.display = "none"; // Ocultar la lista de episodios
+            }
+        }
+
+        function playEpisode(episodeFile) {
+            const videoSource = document.getElementById('videoSource');
+            videoSource.src = episodeFile;
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.load();
+            videoPlayer.play();
+            document.getElementById('videoModal').style.display = 'block'; // Mostrar el modal de video
+        }
+
+        function closeVideo() {
+            document.getElementById('videoModal').style.display = 'none'; // Ocultar el modal de video
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.pause(); // Pausar el video
+            videoPlayer.src = ''; // Limpiar la fuente del video
+        }
+    </script>
+</body>
+</html>

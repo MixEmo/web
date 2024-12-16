@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Fondo degradado de azul a negro */
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: white;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el encabezado */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+form {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #e50914;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#movieContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.movie {
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el pie de página */
+}
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    max-width: 90%;
+    max-height: 90%;
+}
